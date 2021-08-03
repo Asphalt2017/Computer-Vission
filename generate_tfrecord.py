@@ -119,6 +119,7 @@ def create_tf_example(group, path):
     xmaxs = []
     ymins = []
     ymaxs = []
+    center =[]
     classes_text = []
     classes = []
 
@@ -127,6 +128,7 @@ def create_tf_example(group, path):
         xmaxs.append(row['xmax'] / width)
         ymins.append(row['ymin'] / height)
         ymaxs.append(row['ymax'] / height)
+        center.append(((xmaxs-xmins) /2 , (ymaxs -ymins ) /2 ))
         classes_text.append(row['class'].encode('utf8'))
         classes.append(class_text_to_int(row['class']))
 
@@ -141,6 +143,7 @@ def create_tf_example(group, path):
         'image/object/bbox/xmax': dataset_util.float_list_feature(xmaxs),
         'image/object/bbox/ymin': dataset_util.float_list_feature(ymins),
         'image/object/bbox/ymax': dataset_util.float_list_feature(ymaxs),
+        'image/object/bbox/center': dataset_util.float_list_feature(center),
         'image/object/class/text': dataset_util.bytes_list_feature(classes_text),
         'image/object/class/label': dataset_util.int64_list_feature(classes),
     }))
