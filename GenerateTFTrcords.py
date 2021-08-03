@@ -1,33 +1,4 @@
-Skip to content
-Search or jump to…
 
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@Asphalt2017 
-nicknochnack
-/
-GenerateTFRecord
-1
-24
-Code
-Issues
-Pull requests
-1
-Actions
-Projects
-Wiki
-Security
-Insights
-GenerateTFRecord/generate_tfrecord.py /
-@nicknochnack
-nicknochnack Add files via upload
-Latest commit 07d3e8d on 23 Mar
- History
- 1 contributor
-168 lines (142 sloc)  6.08 KB
   
 """ Sample TensorFlow XML-to-TFRecord converter
 usage: generate_tfrecord.py [-h] [-x XML_DIR] [-l LABELS_PATH] [-o OUTPUT_PATH] [-i IMAGE_DIR] [-c CSV_PATH]
@@ -194,16 +165,3 @@ def main(_):
 
 if __name__ == '__main__':
     tf.app.run()
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete
